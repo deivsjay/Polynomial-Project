@@ -1,0 +1,69 @@
+-1. what do we print if it's the 0 polynomial (declared polynomial)
+-2. what if the polynomial is size 1 and only has 0.0 coefficient and exponent? is that valid?
+-3. should i make constants for toFormattedString function?
+-4. are we allowed to use switch statements?
+-5. how are we supposed to create with assert statements? will you run with them on and off?
+
+notes: 
+1. really really check to see if everything in polynomial works. run difficult test cases to pass
+2. go through pa2 assignment guidelines, make sure everything required is in classes
+-3. add function comments and comments throughout code
+-4. make sure everything is below 30 lines of code
+-5. check style guidelines
+-6. readme bullshit
+7. check indentations on emacs
+
+testing:
+
+create 4
+-1 100 -4 2 -24 0
+create 2
+1 100 4 2 2 1 24 0
+
+code:
+
+// enters case based off of user command
+			switch(userCommand){
+			// outputs menu
+			case "help":
+				menu();
+				break;
+			// creates a polynomial
+			case "create":
+				userIndex = in.nextInt();	// takes user inputed number
+				// if not in bounds, doesn't create polynomial
+				if (makeSureInIndex(userIndex)){
+					inputPoly[userIndex] = doCreate(inputPoly[userIndex]);
+				}
+				break;
+			// prints polynomial
+			case "print":
+				userIndex = in.nextInt();
+				// doesn't print if not in bounds
+				if (makeSureInIndex(userIndex)){
+					doPrint(inputPoly[userIndex]);
+				}
+				break;
+			// adds 2 polynomials together
+			case "add":
+				userIndex = in.nextInt();
+				userIndex2 = in.nextInt();
+				userIndex3 = in.nextInt();
+				// doesn't add if not in bounds
+				if (makeSureInIndex(userIndex) && makeSureInIndex(userIndex2) && makeSureInIndex(userIndex3)){
+					inputPoly[userIndex] = doAdd(inputPoly[userIndex], inputPoly[userIndex2], inputPoly[userIndex3]);
+				}
+				break;
+			// evaluates poly for a specific number
+			case "eval":
+				userIndex = in.nextInt();
+				// doesn't evaluate if not in bounds
+				if (makeSureInIndex(userIndex)){
+					doEval(inputPoly[userIndex]);
+				}
+				break;
+			// if user inputed a wrong word
+			default:
+				System.out.println("ERROR: Illegal command.  Type 'help' for command options.");
+				break;
+			}

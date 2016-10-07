@@ -1,0 +1,24 @@
+Polynomial.java notes:
+You may not change the interface for this class, with the following exception: you may add a public Polynomial toString method that you may want to use for debugging purposes. It would probably mostly call the toString method(s) of its constituent part(s). That way you can see if you are building your Polynomial object correctly, even before you implement toFormattedString.
+
+PolynomialTester.java notes:
+not required to submit this .java file
+if PolynomialCalculator.java is compiled alongside this, it'll be hard to find bugs
+
+PolynomialCalculator.java notes:
+output should be exactly the same as prompt
+help command and error messages won't be the same for each solution
+errors it must check for:
+- invalid command
+- illegal polynomial index (for the array of polynomials)
+- polynomial data for create command
+	- missing the last exponent --> ignore last value	(label with "WARNING:")
+	- negative exponents turn positive with abs value	(label with "WARNING:")
+all errors must have error messages displayed starting with "ERROR:"
+
+README:
+- known bugs
+- document test cases that fail that are being submitted
+- give grader special notes for compiling if needed
+how to submit: submit -user csci455 -tag pa2 Polynomial.java PolynomialCalculator.java README
+"I certify that the work submitted for this assignment does not violate USC's student conduct code. In particular, the work is my own, not a collaboration, and does not involve code created by other people, with the exception of the resources explicitly mentioned in the CS 455 Course Syllabus. And I did not share my solution or parts of it with other students in the course."
